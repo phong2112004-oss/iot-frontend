@@ -1,6 +1,7 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
 import './Monitor.css';
+import modelImg from '../image/model.jpg';
 
 function Monitor({ data }) {
   const temp = data?.temp || {};
@@ -122,8 +123,19 @@ function Monitor({ data }) {
           <div className="model-box-wrapper">
             <span className="box-title-tag">SYSTEM MODEL</span>
             
-            <div className={`model-3d-cube ${isSystemOn ? 'cube-active' : ''}`}>
-              <div className="cube-text">PACKAGED MODEL</div>
+            <div className="model-image-container" style={{ margin: '15px 0', textAlign: 'center' }}>
+              <img 
+                src={modelImg} 
+                alt="Packaged System Model" 
+                style={{ 
+                  width: '100%', 
+                  height: 'auto', 
+                  maxHeight: '320px', 
+                  objectFit: 'contain',
+                  transition: 'filter 0.3s ease',
+                  filter: isSystemOn ? 'drop-shadow(0 0 8px rgba(74, 222, 128, 0.5))' : 'grayscale(80%)'
+                }} 
+              />
             </div>
 
             <div className="hardware-feedback-lamps">

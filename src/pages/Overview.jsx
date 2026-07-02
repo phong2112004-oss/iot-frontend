@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Overview.css';
 import PageHeader from '../components/PageHeader';
+import modelImg from '../image/model.jpg';
 
 function Overview({ data }) {
   const [alertLogs, setAlertLogs] = useState([]);
@@ -72,7 +73,7 @@ function Overview({ data }) {
           return updatedLogs.slice(0, 10);
         });
       }
-    }, 5000);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, [data]);
@@ -88,9 +89,11 @@ function Overview({ data }) {
         
         <div className="left-column">
           <div className="image-box">
-            <div className="model-placeholder">
-              <span className="inner-text">Model</span>
-            </div>
+            <img 
+              src={modelImg} 
+              alt="IOT System Model" 
+              style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
+            />
           </div>
 
           <div className="lamps-control-panel">

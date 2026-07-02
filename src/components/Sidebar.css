@@ -1,22 +1,13 @@
 .sidebar-container {
   width: 260px;
   height: 100vh;
-  background-color: #e0e0e0; /* Màu nền xám tổng thể của sidebar */
+  background-color: #e0e0e0; 
   border-right: 1.5px solid #b8b8b8;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
 }
 
-.sidebar-logo-section, 
-.sidebar-container > div:first-child {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-bottom: 1.5px solid #b8b8b8;
-  background-color: #ffffff;
-}
 
 .sidebar-container .logo-placeholder,
 .sidebar-container div:first-child div {
@@ -66,7 +57,7 @@
 
 .sidebar-container a.active,
 .menu-item.active {
-  background-color: #ffffff; /* Đổi sang nền trắng tinh */
+  background-color: #ffffff;
   border-bottom: 1px solid #ffffff;
 }
 
@@ -77,6 +68,24 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 6px; /* Độ dày thanh màu xanh */
-  background-color: #3f51b5; /* Màu xanh nước biển đậm */
+  width: 6px;
+  background-color: #3f51b5;
+}
+.sidebar-logos-container {
+  display: flex;
+  flex-direction: row;     
+  justify-content: center; 
+  align-items: center;     
+  gap: 12px;               
+  padding: 15px 10px;      
+  width: 100%;             
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.sidebar-logo-item {
+  width: 45%;              
+  max-width: 90px;         
+  height: auto;          
+  object-fit: contain;
 }

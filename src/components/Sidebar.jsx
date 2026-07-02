@@ -1,13 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
+import facultyLogo from '../image/faculty_logo.png';
+import universityLogo from '../image/university_logo.png';
 
 function Sidebar() {
   return (
     <div className="sidebar-container">
-      <div className="sidebar-logo-section">
-        <div className="logo-placeholder">Logo</div>
-        <div className="logo-placeholder">Logo</div>
+      <div className="sidebar-logos-container">
+        <img src={universityLogo} alt="University Logo" className="sidebar-logo-item" />
+        <img src={facultyLogo} alt="FAE Logo" className="sidebar-logo-item" />
       </div>
       
       <nav className="sidebar-menu">
