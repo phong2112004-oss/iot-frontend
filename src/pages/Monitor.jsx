@@ -32,17 +32,32 @@ function Monitor({ data }) {
   
   const handleToggleStart = () => {
     const nextStartStatus = buttons.START === 1 ? 0 : 1;
-    sendButtonUpdate({
-      'buttons/START': nextStartStatus,
-      'buttons/E_Stop_HMI': nextStartStatus
-    });
+    if (nextStartStatus === 0) {
+        sendButtonUpdate({
+        'buttons/START': nextStartStatus,
+        'buttons/E_Stop_HMI': nextStartStatus,
+        'lamps/SF_LAMP': 0,
+        'lamps/EF_LAMP': 0,
+        'lamps/WHEELER_LAMP': 0,
+        'lamps/TEC_LAMP': 0
+      });
+    } else {
+      sendButtonUpdate({
+        'buttons/START': nextStartStatus,
+        'buttons/E_Stop_HMI': nextStartStatus
+      });
+    }
   };
 
   const handleEmergencyStop = () => {
     if (buttons.E_Stop_HMI === 0) return; 
     sendButtonUpdate({
       'buttons/START': 0,
-      'buttons/E_Stop_HMI': 0
+      'buttons/E_Stop_HMI': 0,
+      'lamps/SF_LAMP': 0, 
+      'lamps/EF_LAMP': 0,
+      'lamps/WHEELER_LAMP': 0,
+      'lamps/TEC_LAMP': 0
     });
   };
 
