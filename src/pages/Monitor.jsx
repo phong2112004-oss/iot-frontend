@@ -36,6 +36,10 @@ function Monitor({ data }) {
         sendButtonUpdate({
         'buttons/START': nextStartStatus,
         'buttons/E_Stop_HMI': nextStartStatus,
+        'buttons/SF': 0,
+        'buttons/EF': 0,
+        'buttons/Wheel': 0,
+        'buttons/TEC': 0,
         'lamps/SF_LAMP': 0,
         'lamps/EF_LAMP': 0,
         'lamps/WHEELER_LAMP': 0,
@@ -54,6 +58,10 @@ function Monitor({ data }) {
     sendButtonUpdate({
       'buttons/START': 0,
       'buttons/E_Stop_HMI': 0,
+      'buttons/SF': 0,
+      'buttons/EF': 0,
+      'buttons/Wheel': 0,
+      'buttons/TEC': 0,
       'lamps/SF_LAMP': 0, 
       'lamps/EF_LAMP': 0,
       'lamps/WHEELER_LAMP': 0,
@@ -79,7 +87,7 @@ function Monitor({ data }) {
     if (fieldName === 'SF') lampFieldName = 'SF_LAMP';
     else if (fieldName === 'EF') lampFieldName = 'EF_LAMP';
     else if (fieldName === 'Wheel') lampFieldName = 'WHEELER_LAMP';
-    else if (fieldName === 'Tec') lampFieldName = 'TEC_LAMP';
+    else if (fieldName === 'TEC') lampFieldName = 'TEC_LAMP';
 
     sendButtonUpdate({
       [`buttons/${fieldName}`]: nextValue,
@@ -279,7 +287,7 @@ function Monitor({ data }) {
             <h3>🛠️ Manual Device Actuators</h3>
             <p className="card-hint-text">*Only available in MANUAL mode</p>
             
-            {['SF', 'EF', 'Wheel', 'Tec'].map((device) => {
+            {['SF', 'EF', 'Wheel', 'TEC'].map((device) => {
               const isChecked = buttons[device] === 1;
               return (
                 <div className="control-row sub-device-row" key={device}>
