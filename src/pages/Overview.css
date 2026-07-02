@@ -1,0 +1,202 @@
+.overview-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.title-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.project-title {
+  border: 1.5px solid #000;
+  padding: 15px 60px;
+  font-size: 24px;
+  font-weight: bold;
+  background: #fff;
+  width: fit-content;
+  text-align: center;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.box-tag {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+/* Cột trái: Mô hình và Đèn */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image-box {
+  width: 100%;
+}
+
+.model-placeholder {
+  width: 100%;
+  height: 260px;
+  border: 1.5px solid #000;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.inner-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+}
+
+.lamps-control-panel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1.5px solid #000;
+  padding: 15px 10px;
+  background: #fff;
+  height: 80px;
+}
+
+.lamp-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.lamp-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid #000;
+  transition: background 0.3s ease;
+}
+
+.lamp-circle.green {
+  background-color: #00FF00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+}
+
+.lamp-circle.red {
+  background-color: #FF0000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.lamp-name {
+  font-size: 11px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Cột phải: Bản đồ và Bảng cảnh báo */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.component-wrapper {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 4px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.realtime-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 12px;
+  text-align: left;
+}
+
+.realtime-table th {
+  background: #f5f5f5;
+  padding: 8px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+}
+
+.realtime-table td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.no-data-row {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 20px !important;
+  font-size: 14px;
+}
+
+.param-name {
+  color: #e65100;
+  font-weight: 500;
+}
+
+.param-val {
+  font-weight: 600;
+  color: #333;
+}
+
+.param-time {
+  color: #666;
+}
+
+.level-badge {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.level-badge.high {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.level-badge.critical {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.loading-state {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  padding: 50px;
+  color: #666;
+}
+
+.header-right {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  background-color: rgba(255, 255, 255, 0.15); /* Khung mờ bao quanh đồng hồ */
+  padding: 6px 12px;
+  border-radius: 4px;
+}

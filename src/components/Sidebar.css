@@ -1,0 +1,82 @@
+.sidebar-container {
+  width: 260px;
+  height: 100vh;
+  background-color: #e0e0e0; /* Màu nền xám tổng thể của sidebar */
+  border-right: 1.5px solid #b8b8b8;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.sidebar-logo-section, 
+.sidebar-container > div:first-child {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1.5px solid #b8b8b8;
+  background-color: #ffffff;
+}
+
+.sidebar-container .logo-placeholder,
+.sidebar-container div:first-child div {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.sidebar-container nav,
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sidebar-container a,
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  background-color: #d8d8d8;
+  border-bottom: 1px solid #c8c8c8;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  
+  font-size: 15px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.sidebar-container a::after,
+.menu-item::after {
+  content: ">";
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.sidebar-container a:hover,
+.menu-item:hover {
+  background-color: #e8e8e8;
+}
+
+.sidebar-container a.active,
+.menu-item.active {
+  background-color: #ffffff; /* Đổi sang nền trắng tinh */
+  border-bottom: 1px solid #ffffff;
+}
+
+.sidebar-container a.active::before,
+.menu-item.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px; /* Độ dày thanh màu xanh */
+  background-color: #3f51b5; /* Màu xanh nước biển đậm */
+}

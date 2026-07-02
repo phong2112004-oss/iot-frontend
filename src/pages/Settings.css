@@ -1,0 +1,176 @@
+.settings-page-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.settings-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+/* Lưới phân tách 2 cụm tủ điều khiển */
+.settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* Định dạng một tủ/card chức năng */
+.settings-card {
+  border: 1.5px solid #000000;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.panel-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+}
+
+.panel-divider {
+  height: 2px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+/* Khung bọc từng cụm input label */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.input-group:last-child {
+  margin-bottom: 0;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Định dạng các ô nhập thông số số kỹ thuật */
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #cccccc;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #3f51b5;
+}
+
+/* --- TÙY BIẾN ĐỒ HỌA MÀU SẮC ICON BADGES --- */
+.icon-badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.bg-orange { background-color: #ff9800; }
+.bg-red    { background-color: #f44336; }
+.bg-green  { background-color: #4caf50; }
+.bg-blue   { background-color: #2196f3; }
+.bg-purple { background-color: #9c27b0; }
+
+.text-orange { color: #e65100; }
+.text-blue   { color: #0d47a1; }
+
+/* Khu vực nút bấm Action */
+.form-action-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn-save-settings {
+  background-color: #2196f3;
+  color: white;
+  border: 1.5px solid #0d47a1;
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-save-settings:hover {
+  background-color: #1976d2;
+}
+
+.btn-save-settings:active {
+  background-color: #1565c0;
+}
+/* Khung hiển thị cảnh báo khi hệ thống đang tắt */
+.system-disabled-warning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.warning-box {
+  max-width: 550px;
+  width: 100%;
+  border: 2px dashed #d32f2f; /* Viền đứt nét màu đỏ kỹ thuật */
+  background-color: #fffde7;   /* Nền vàng nhạt cảnh báo */
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.warning-icon {
+  font-size: 48px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.warning-box h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #c62828;
+  margin: 0 0 14px 0;
+  letter-spacing: 0.5px;
+}
+
+.warning-box p {
+  font-size: 15px;
+  color: #444444;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.warning-hint {
+  font-size: 13.5px;
+  color: #666666;
+  border-top: 1px solid #f0f0d0;
+  padding-top: 12px;
+  margin-top: 16px;
+}
