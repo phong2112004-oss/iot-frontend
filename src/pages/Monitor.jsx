@@ -79,6 +79,20 @@ function Monitor({ data }) {
       <div className="monitor-main-content">
         
         <div className="monitor-left-panel">
+          <div className="in-room-container">
+            <h4 className="container-label">🏠 In Room Monitor</h4>
+            <div className="in-room-grid">
+              <div className="sub-sensor">
+                <span>Temperature</span>
+                <strong>{temp.Temp4_Indoor ?? 0} °C</strong>
+              </div>
+              <div className="sub-sensor">
+                <span>CO2 Density</span>
+                <strong className="text-orange">{temp.CO2 ?? 0} ppm</strong>
+              </div>
+            </div>
+          </div>
+
           <div className="sensor-card">
             <h3>💨 Air Intake Temperature</h3>
             <div className="sensor-value text-blue">{temp.Temp1_air_intake ?? 0} °C</div>
@@ -92,20 +106,6 @@ function Monitor({ data }) {
           <div className="sensor-card">
             <h3>⚙️ Motor 3-Phase Temp</h3>
             <div className="sensor-value text-purple">{temp.Temp3_Motor3P ?? 0} °C</div>
-          </div>
-
-          <div className="in-room-container">
-            <h4 className="container-label">🏠 In Room Monitor</h4>
-            <div className="in-room-grid">
-              <div className="sub-sensor">
-                <span>Temperature</span>
-                <strong>{temp.Temp4_Indoor ?? 0} °C</strong>
-              </div>
-              <div className="sub-sensor">
-                <span>CO2 Density</span>
-                <strong className="text-orange">{temp.CO2 ?? 0} ppm</strong>
-              </div>
-            </div>
           </div>
 
           <div className="sf-details-container">
@@ -122,20 +122,68 @@ function Monitor({ data }) {
         <div className="monitor-center-panel">
           <div className="model-box-wrapper">
             <span className="box-title-tag">SYSTEM MODEL</span>
-            
-            <div className="model-image-container" style={{ margin: '15px 0', textAlign: 'center' }}>
-              <img 
-                src={modelImg} 
-                alt="Packaged System Model" 
-                style={{ 
-                  width: '100%', 
-                  height: 'auto', 
-                  maxHeight: '320px', 
-                  objectFit: 'contain',
-                  transition: 'filter 0.3s ease',
-                  filter: isSystemOn ? 'drop-shadow(0 0 8px rgba(74, 222, 128, 0.5))' : 'grayscale(80%)'
-                }} 
-              />
+                
+              <div className="image-svg-container" style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              
+                <img 
+                  src={modelImg} 
+                  alt="Packaged System Model" 
+                  style={{ 
+                    maxHeight: '400px', 
+                    width: 'auto', 
+                    maxWidth: '100%', 
+                    display: 'block',
+                    zIndex: 1
+                  }} 
+                />
+
+              <svg 
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  pointerEvents: 'none',
+                  zIndex: 2
+                }}
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+              >
+                <defs>
+                  <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 2 L 5 5 L 0 8 z" fill="#ef4444" />
+                  </marker>
+                </defs>
+
+                <path 
+                  d="M 0,10 L 25,40 L 25,62 L 38,62" 
+                  fill="none" 
+                  stroke="#ef4444" 
+                  strokeWidth="0.8" 
+                  strokeDasharray="2,2" 
+                  markerEnd="url(#arrow)"
+                />
+
+                <path 
+                  d="M 0,35 L 35,35 L 35,45 L 38,45" 
+                  fill="none" 
+                  stroke="#ef4444" 
+                  strokeWidth="0.8" 
+                  strokeDasharray="2,2" 
+                  markerEnd="url(#arrow)"
+                />
+
+
+                <path 
+                  d="M 0,60 L 15,65 L 15,92 L 58,92 L 58,78" 
+                  fill="none" 
+                  stroke="#ef4444" 
+                  strokeWidth="0.8" 
+                  strokeDasharray="2,2" 
+                  markerEnd="url(#arrow)"
+                />
+              </svg>
             </div>
 
             <div className="hardware-feedback-lamps">
