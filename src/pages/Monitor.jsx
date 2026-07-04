@@ -146,7 +146,8 @@ function Monitor({ data }) {
           <div className="model-box-wrapper">
             <span className="box-title-tag">SYSTEM MODEL</span>
                 
-              <div className="image-svg-container" style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <div className={`image-svg-container ${!isSystemOn ? 'block-gray-out' : ''}`} 
+                   style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'all 0.3s ease' }}>
               
                 <img 
                   src={modelImg} 
