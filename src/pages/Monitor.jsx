@@ -146,8 +146,7 @@ function Monitor({ data }) {
           <div className="model-box-wrapper">
             <span className="box-title-tag">SYSTEM MODEL</span>
                 
-              <div className={`image-svg-container ${!isSystemOn ? 'block-gray-out' : ''}`} 
-                   style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'all 0.3s ease' }}>
+              <div className="image-svg-container" style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               
                 <img 
                   src={modelImg} 
@@ -157,7 +156,9 @@ function Monitor({ data }) {
                     width: 'auto', 
                     maxWidth: '100%', 
                     display: 'block',
-                    zIndex: 1
+                    zIndex: 1,
+                    transition: 'filter 0.3s ease',
+                    filter: isSystemOn ? 'drop-shadow(0 0 8px rgba(74, 222, 128, 0.5))' : 'grayscale(80%)'
                   }} 
                 />
 
